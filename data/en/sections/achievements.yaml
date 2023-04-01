@@ -1,0 +1,24 @@
+# section information
+section:
+  name: Achievements
+  id: achievements
+  enable: true
+  weight: 8
+  showOnNavbar: false
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your achievements achievements
+achievements:
+- title: Gold Medal - Inter IIT Tech Meet 10.0
+  image: /images/sections/achievements/presenter.jpg
+  summary: Research Lead for the Gold winning team in Bosch's Model Extraction for Video Classification Challenge
+- title: Intelligent Ground Vehicle Competition (2019)
+  image: /images/sections/achievements/igvc.jpg
+  summary: Bagged runners-up in the Auto-Navigation challenge amongst 40+ international teams
+- title: Kishore Vaigyanik Protsahan Yojana (2017)
+  image: /images/sections/achievements/kvpy.jpg
+  summary: Selected as a KVPY Scholar, ranking in the top 0.3% of one lakh+ appearing candidates
+- title: National Talent Search Examination (2016)
+  image: /images/sections/achievements/ntse.jpg
+  summary: Selected as an NTS Scholar, ranking in the top 0.01% among twelve lakh+ candidates

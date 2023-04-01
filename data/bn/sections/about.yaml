@@ -1,0 +1,84 @@
+# section information
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+# your designation
+designation: Business Analyst Intern 
+# your company information
+company:
+  name: Dr. Reddy's Laboratories 
+  url: "https://www.drreddys.com/"
+
+# your resume. this file path should be relative to you "static" directory
+resume: "files/resume.pdf"
+
+# a summary about you
+summary: 'I am a Senior at the Indian Institute of Technology, Kharagpur. I am working towards machine learning applications in real life. I and some of my friends at IIT Kharagpur started Chi SquareX, a tech-based startup focusing on mentoring college students through actual research projects. On the side, I love working on documentation and writing blogs and notes for the stuff I find helpful in life.'
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+# - name: Email
+#   icon: "fas fa-envelope"
+#   url: "example@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/thefatbandit"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/arnesh-issar/"
+
+- name: Twitter
+  icon: "fab fa-twitter"
+  url: "https://mobile.twitter.com/the_fat_bandit"
+
+- name: Google Scholar
+  icon: "fas fa-graduation-cap"
+  url: "https://scholar.google.com/citations?user=TL8jubcAAAAJ&hl=en"
+
+# Show your badges
+# You can show your verifiable certificates from https://www.credly.com.
+# You can also show a circular bar indicating the level of expertise on a certain skill
+badges:
+- type: certification
+  name: Data Science Professional Certificate
+  url: "https://www.credly.com/org/coursera/badge/data-science-professional-certificate"
+  badge: "https://images.credly.com/size/340x340/images/28944969-813a-43b9-944f-7910111ce764/Professional_Certificate_-_Data_Science.png"
+
+- type: certification
+  name: Istio and IBM Cloud Kubernetes Service
+  url: "https://www.credly.com/org/the-linux-foundation/badge/exam-developer-certified-kubernetes-security-specialist"
+  badge: "https://images.credly.com/size/680x680/images/8d34d489-84bf-4861-a4a0-9e9d68318c5c/Beyond_basics_of_Istio_on_Cloud_v2.png"
+
+- type: certification
+  name: Artificial Intelligence and Machine Learning
+  url: "https://www.credly.com/org/grupo-bancolombia/badge/artificial-intelligence-and-machine-learning"
+  badge: "https://images.credly.com/size/680x680/images/e027514f-9d07-4b29-862f-fe21a8aaebf1/ae.png"
+
+- type: soft-skill-indicator
+  name: Leadership
+  percentage: 90
+  color: blue
+
+- type: soft-skill-indicator
+  name: Team Work
+  percentage: 85
+  color: yellow
+
+- type: soft-skill-indicator
+  name: Hard Working
+  percentage: 85
+  color: green
+
+# # you can also provide color code instead of the color name
+# - type: soft-skill-indicator
+#   name: Example 1
+#   percentage: 75
+#   color: "#00adb5"

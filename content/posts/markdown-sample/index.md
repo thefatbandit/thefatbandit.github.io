@@ -365,7 +365,7 @@ This version correctly uses the singular verb “means” with the singular subj
 However, the wording of this choice, “many journalists must be not only reporter but also photographer …,” does not make as much sense as the wording of choice (D) which uses plural nouns “reporters,” “photographers,” “marketers,” and “pundits” to refer to the multiple roles of journalists. So, (D) is the better choice.
 
 
-> YOUR CHOICE(D) The proliferation of internet-related platforms, along with smartphones, digital cameras, and photo-editing software, means that many journalists must be not only reporters but also photographers, marketers, and pundits
+> (D) The proliferation of internet-related platforms, along with smartphones, digital cameras, and photo-editing software, means that many journalists must be not only reporters but also photographers, marketers, and pundits
  in order to thrive in a more dynamic, multifaceted news environment.
 
 
@@ -432,7 +432,7 @@ So, in order to be correct, the sentence needs to use singular verbs with the si
 The singular verb “touts” agrees with the singular subject “the railroad lobby,” but the plural “face” does not agree with the subject.
 
 
-> YOUR CHOICE(B) The railroad lobby, in addition to environmental advocates and intercity commuters, touts the proposed cross-country high-speed rail system, colloquially known as a “bullet train,” as the future of transportation but faces
+> (B) The railroad lobby, in addition to environmental advocates and intercity commuters, touts the proposed cross-country high-speed rail system, colloquially known as a “bullet train,” as the future of transportation but faces
  an uphill battle against airline companies and automakers, two groups with an outsized influence in Washington.
 
 

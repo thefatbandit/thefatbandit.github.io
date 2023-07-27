@@ -3,7 +3,6 @@ baseURL: https://thefatbandit.github.io
 languageCode: en-us
 title: "Arnesh's Website"
 theme:
-  - hugo-dynamic-tabs
   - toha
 
 # Manage languages

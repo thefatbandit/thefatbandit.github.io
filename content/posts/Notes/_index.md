@@ -2,7 +2,7 @@
 title: Notes Category
 menu:
   sidebar:
-    name: Notes
+    name: Academic Notes
     identifier: notes
     weight: 15
 ---

@@ -6,9 +6,19 @@
 <section class="pond-404">
   <div class="pond-404__head">
     <h1 class="pond-404__code">404</h1>
-    <h4 class="pond-404__title">This page sank to the bottom of the pond.</h4>
-    <p class="pond-404__sub">The hippos haven't seen it either.</p>
+    <h4 class="pond-404__title">This page sank to the bottom of the pond. The hippos haven't seen it either.</h4>
   </div>
+
+  <ul class="pond-404__hints" aria-label="How to play">
+    <li class="pond-404__hint">
+      <svg class="pond-404__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.2"/><circle cx="12" cy="12" r="6" fill="none" stroke-width="1.8"/><circle cx="12" cy="12" r="10" fill="none" stroke-width="1.4" opacity=".55"/></svg>
+      <span><strong>Tap</strong> the water to make a ripple</span>
+    </li>
+    <li class="pond-404__hint">
+      <svg class="pond-404__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5.5"/><path d="M12 2.5a9.5 9.5 0 1 1-9.5 9.5" fill="none" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span><strong>Press and hold</strong> to drop a watermelon</span>
+    </li>
+  </ul>
 
   <div class="pond-404__stage">
     <canvas id="hippo-pond"
@@ -17,8 +27,6 @@
             aria-label="An ASCII-art pond, seen side-on, with a mother hippo, her baby and a few small fish, under a little sign that reads For Fiona. Tap the water to make a ripple, or press and hold to drop a watermelon for a hippo to eat. With the pond focused, press Enter for a ripple or F to feed.">
     </canvas>
   </div>
-
-  <p class="pond-404__caption">Tap the water to make a ripple · Press and hold to drop a watermelon</p>
 
   <div class="pond-404__actions">
     <a class="pond-404__btn" href="{{ "/" | relLangURL }}">Take me home</a>

@@ -39,7 +39,8 @@ html[data-theme='dark'] body.kind-404 {
   }
 
   &__title {
-    margin: 0.75rem 0 0.25rem;
+    margin: 0.75rem auto 1.75rem;
+    max-width: 34rem;
     color: var(--pond-heading);
     font-weight: 700;
   }
@@ -73,11 +74,72 @@ html[data-theme='dark'] body.kind-404 {
     }
   }
 
-  &__caption {
-    margin: 0.9rem 0 0;
-    color: var(--pond-muted);
-    font-size: 0.9rem;
+  // How-to-play hints, above the pond so people know it's interactive.
+  // Accent text on the tinted pill stays above 4.5:1 in both themes.
+  &__hints {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 0.75rem;
+    padding: 0;
+    margin: 0 0 1rem;
   }
+
+  &__hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 44px;
+    padding: 0.4rem 1.1rem 0.4rem 0.8rem;
+    border: 1.5px solid var(--pond-hint-edge);
+    border-radius: 999px;
+    background: var(--pond-hint-bg);
+    color: var(--pond-heading);
+    font-size: 1.05rem;
+    line-height: 1.3;
+    animation: pond-hint-glow 2.4s ease-in-out 0.6s 2;
+
+    strong {
+      color: var(--pond-link);
+      font-weight: 800;
+    }
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+    flex: none;
+    fill: var(--pond-link);
+    stroke: var(--pond-link);
+  }
+}
+
+body.kind-404 {
+  --pond-hint-bg: rgba(14, 116, 144, 0.07);
+  --pond-hint-edge: rgba(14, 116, 144, 0.45);
+}
+
+html[data-theme='dark'] body.kind-404 {
+  --pond-hint-bg: rgba(34, 211, 238, 0.09);
+  --pond-hint-edge: rgba(34, 211, 238, 0.45);
+}
+
+// a soft glow twice on arrival to draw the eye, then it rests
+@keyframes pond-hint-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(8, 145, 178, 0); }
+  50% { box-shadow: 0 0 0 6px rgba(8, 145, 178, 0.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pond-404__hint { animation: none; }
+}
+
+@media (max-width: 640px) {
+  .pond-404__hint { font-size: 1rem; }
+}
+
+.pond-404 {
 
   &__actions {
     display: flex;

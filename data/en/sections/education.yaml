@@ -1,0 +1,29 @@
+section:
+  name: Education
+  id: education
+  template: sections/education.html
+  enable: true
+  weight: 4
+  showOnNavbar: true
+
+degrees:
+- name: Dual Degree (B.Tech + M.Tech), Chemical Engineering and Finance
+  icon: fa-graduation-cap
+  timeframe: 2018-2023
+  institution:
+    name: Indian Institute of Technology, Kharagpur
+    url: "https://www.iitkgp.ac.in"
+  grade:
+    scale: CGPA
+    achieved: 8.56
+    outOf: 10
+  extracurricularActivities:
+  - "AI Team Lead, Autonomous Ground Vehicle (AGV.AI): Indy Autonomous Challenge (work presented at IROS); 8 projects with ₹30+ lakh in funding from Mahindra, Xiaomi and the Government of India; 12 tier-1 publications."
+  - "Lead Mentor, Code in Place (Stanford University): 6-week programming course for 20,000 students in 30+ countries with 800+ mentors."
+  - "Inter IIT Tech Meet 2023, Gold: ML pipeline for lunar surface mapping (offered a fellowship by ISRO)."
+  - "Inter IIT Tech Meet 2022, Gold: software to protect ML models from extraction (offered a PPI by Bosch)."
+  - "Winner, Inter IIT Quiz 2018 and 2019."
+  customSections:
+  - name: Minor
+    content: Computer Science & Engineering
+

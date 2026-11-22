@@ -1,0 +1,68 @@
+section:
+  name: Projects
+  id: projects
+  enable: false   # hidden for now; set to true to bring the section back
+  weight: 5
+  showOnNavbar: true
+
+buttons:
+- name: All
+  filter: "all"
+- name: Products
+  filter: "product"
+- name: Research
+  filter: "research"
+
+projects:
+- name: Admissions Studio
+  role: Builder
+  timeline: "Oct 2026 - Present"
+  summary: An AI college-application coach for students and counselors. Students write essays and get brainstorming and feedback from Claude; counselors work inside each student's workspace. (Next.js + Claude)
+  tags: ["product", "ai", "edtech"]
+
+- name: GMAT Practice
+  role: Builder
+  timeline: "Oct 2026 - Present"
+  summary: Timed practice sets on official GMAT questions. Build a set by type and difficulty, solve each question on GMAT Club in a side window, and export a results table to Google Sheets.
+  tags: ["product", "edtech"]
+
+- name: GRE Vocab SRS
+  role: Builder
+  timeline: "Oct 2026 - Present"
+  url: "https://gre-vocab-srs.vercel.app"
+  summary: Spaced-repetition flashcards for GRE vocabulary lists 1–14.
+  tags: ["product", "edtech"]
+
+- name: MBA Essay Reviewer
+  role: Builder
+  timeline: "Jun 2026"
+  summary: Pick a school's prompt, paste an essay, and get a rubric-scored review with thematic feedback and line-level annotations.
+  tags: ["product", "ai", "edtech"]
+
+- name: frenet-gym
+  role: Developer
+  timeline: "Jul 2020"
+  repo: https://github.com/thefatbandit/frenet-gym
+  summary: An OpenAI Gym environment for the CARLA simulator, for reinforcement learning in self-driving motion planning.
+  tags: ["research", "rl", "autonomous-driving"]
+
+- name: Multi-agent Grid Driving
+  role: Developer
+  timeline: "Jan 2022"
+  repo: https://github.com/thefatbandit/multi-agent-driving
+  summary: A simple, scalable grid-driving environment for testing planning and reinforcement-learning algorithms in traffic.
+  tags: ["research", "rl", "autonomous-driving"]
+
+- name: CARLA World
+  role: Developer
+  timeline: "Dec 2020"
+  repo: https://github.com/thefatbandit/carla_world
+  summary: A package for simulating a world in CARLA.
+  tags: ["research", "autonomous-driving"]
+
+- name: Karpoff Replication
+  role: Developer
+  timeline: "Apr 2023"
+  repo: https://github.com/thefatbandit/karpoff_replication
+  summary: Term project replicating Karpoff's study of the relationship between price changes and trading volume.
+  tags: ["research", "finance"]

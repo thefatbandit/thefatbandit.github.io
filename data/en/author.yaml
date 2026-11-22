@@ -1,0 +1,11 @@
+name: "Arnesh Kumar Issar"
+nickname: "Arnesh"
+greeting: "Hi, I am"
+image: "images/author/arnesh.jpg"
+contactInfo:
+  github: thefatbandit
+  linkedin: arnesh-issar
+summary:
+  - I work in AI
+  - I breathe data
+  - I dabble in code

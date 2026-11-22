@@ -1,0 +1,38 @@
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+designation: Senior Technical Project Manager
+company:
+  name: Mercor
+  url: "https://mercor.com"
+
+summary: >-
+  I run AI data programs for frontier labs at [Mercor](https://mercor.com), where I joined as employee #5 in
+  the India office. I've piloted and scaled pipelines for audio, health and PhD-level education datasets,
+  and today I lead payments, data quality and expert management for one of the company's largest projects.
+  Before Mercor I was a strategy consultant at Arthur D. Little in the Middle East and India. I studied at
+  IIT Kharagpur (dual degree in Chemical Engineering and Finance, minor in Computer Science), where I led the
+  AI team of the Autonomous Ground Vehicle group and took F1 cars around the Indy 500 track autonomously.
+
+socialLinks:
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/thefatbandit"
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/arnesh-issar/"
+- name: Google Scholar
+  icon: "fas fa-graduation-cap"
+  url: "https://scholar.google.com/citations?user=TL8jubcAAAAJ&hl=en"
+
+# TODO: add a resume button once an updated, phone-free PDF is in static/files/
+# resourceLinks:
+# - title: "My Resume"
+#   url: "files/resume.pdf"
+
+badges: []

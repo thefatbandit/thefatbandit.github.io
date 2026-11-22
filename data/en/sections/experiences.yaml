@@ -1,0 +1,69 @@
+section:
+  name: Experiences
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+
+experiences:
+- company:
+    name: Mercor
+    url: "https://mercor.com"
+    location: San Francisco and India
+    overview: "Joined as India-Ops employee #5"
+  positions:
+  - designation: Senior Technical Project Manager
+    start: Sep 2025
+    responsibilities:
+    - Lead the payments, data quality and expert management functions of a $X million-per-month project with a frontier lab, which led to $XX million in recurring annual revenue from similar projects.
+    - Built the at-scale hiring pipeline for Technical Project Managers, which has hired 50+ TPMs into the company.
+  - designation: Technical Project Manager
+    start: Feb 2025
+    end: Aug 2025
+    responsibilities:
+    - Piloted Mercor's first audio dataset pipeline with a frontier lab, built the entire pipeline, and scaled it to $X million per month in revenue.
+    - Piloted and scaled PhD-level education projects for a key benchmark dataset that evaluates AI agents on education tasks for a large frontier lab, leading to $XX million in recurring revenue.
+
+- company:
+    name: Arthur D. Little
+    url: "https://www.adlittle.com"
+    location: Middle East and India
+    overview: Strategy consulting across technology, mobility and financial services.
+  positions:
+  - designation: Business Analyst, Strategy Consulting
+    start: Nov 2023
+    end: Jan 2025
+    responsibilities:
+    - Buy-side due diligence on a $200M+ premium ride-hailing company for a GCC sovereign fund. Found ~$4M in operating cost reductions and $40M in additional revenue through synergies with existing portfolio companies.
+    - Raised Net Promoter Score by 12 points for a leading UAE financial hub through CRM transformation and digitization, including a customer-service chatbot that scored 23% higher CSAT in beta.
+    - Led operational planning for the introduction of aerial taxis for a GCC ministry, raising projected utilization to 91%.
+    - Ran sponsorship strategy for a GCC ministry flagship event (20,000+ attendees), bringing in $2.4M and personally securing $230K.
+    - Led a 5-member team, appointed by the managing partner, to build the firm's internal research capability, halving turnaround times and saving a projected $400K a year.
+
+- company:
+    name: LimeChat
+    url: "https://www.limechat.ai"
+    location: India
+    overview: Conversational commerce for D2C brands on WhatsApp (YC'21).
+  positions:
+  - designation: Product Management Intern
+    start: Aug 2023
+    end: Oct 2023
+    responsibilities:
+    - Reached product-market fit for Click-to-WhatsApp Ads with 20+ brands, working with Meta's leadership.
+    - Delivered 10% higher average ROAS than traditional campaigns through automated lead retargeting.
+    - Cut campaign setup time by 40% with a ChatGPT integration for query-based segmentation and chat-flow building.
+
+- company:
+    name: Dr. Reddy's Laboratories
+    url: "https://www.drreddys.com"
+    location: India
+    overview: Global pharmaceutical company. External innovations division.
+  positions:
+  - designation: Digital Analyst (offered PPO)
+    start: May 2022
+    end: Jul 2022
+    responsibilities:
+    - Secured a $200K pilot budget for a product in a $755M market.
+    - Ran technical due diligence on 3 Series A–C startups for investment and onboarding into DRL's digital ecosystem.
+

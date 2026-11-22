@@ -1,0 +1,8 @@
+{{/* The theme's footer, plus the home-page easter egg (see assets/scripts/golu.js).
+     Wired up via params.footer.template in hugo.yaml, so no theme file is copied. */}}
+{{ partial "footer.html" . }}
+{{ if .IsHome }}
+  {{ with resources.Get "scripts/golu.js" | minify | fingerprint }}
+    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}

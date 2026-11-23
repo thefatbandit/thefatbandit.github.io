@@ -1,0 +1,9 @@
+{{- /* Math passed through untouched by goldmark (see markup.goldmark.extensions.passthrough
+   in hugo.yaml). Printing .Inner here lets Hugo's template escaping turn a "<" in a
+   formula into &lt;, so the browser doesn't read it as a tag. KaTeX auto-render then
+   typesets it in the browser. Don't add htmlEscape: that escapes twice. */ -}}
+{{- if eq .Type "block" -}}
+$${{ .Inner }}$$
+{{- else -}}
+${{ .Inner }}$
+{{- end -}}

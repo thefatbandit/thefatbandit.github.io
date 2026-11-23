@@ -151,7 +151,7 @@ Your broker will pay your margin. They will do so through closing your other ope
 <details><summary><b><i><u>Solution</u></i></b></summary>
 {{< alert type="secondary" >}} 
 Being in a short position, we’ll incur losses if the prices increase.
-But to maintain our maintenance margin, the max. loss we can incur before a margin call is <span class="nomath">1000$</span> (Initial-Maintenance Margin). 
-For 5000 ounces, this amounts to <span class="nomath">0.2$</span> max rise per ounce.
+But to maintain our maintenance margin, the max. loss we can incur before a margin call is <span class="nomath">1000&#36;</span> (Initial-Maintenance Margin). 
+For 5000 ounces, this amounts to <span class="nomath">0.2&#36;</span> max rise per ounce.
 {{< /alert >}}
 </details>

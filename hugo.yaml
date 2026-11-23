@@ -28,6 +28,14 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    extensions:
+      # Hand math to KaTeX untouched, so markdown doesn't eat \\ line breaks,
+      # \% or underscores inside formulas.
+      passthrough:
+        enable: true
+        delimiters:
+          block: [['\[', '\]'], ['$$', '$$']]
+          inline: [['\(', '\)'], ['$', '$']]
   tableOfContents:
     startLevel: 2
     endLevel: 6

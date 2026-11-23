@@ -1,14 +1,9 @@
 ---
 recent: false
+hidden: true
 title: "Shortcodes Samples"
 date: 2020-06-08T08:06:25+06:00
 description: Shortcodes sample
-menu:
-  sidebar:
-    name: Shortcodes Sample
-    identifier: shortcodes
-    parent: blog-notes
-    weight: 40
 hero: boat.jpg
 mermaid: true
 ---
@@ -234,3 +229,91 @@ erDiagram
 ## Embedded PDF
 
 {{< embed-pdf src="/files/sample.pdf" >}}
+
+## Quiz (quizdown)
+
+Interactive quizzes, used by the GMAT Critical Reasoning posts. The shortcode is this site's own (`layouts/shortcodes/quizdown.html`) and loads [quizdown](https://github.com/bonartm/quizdown-js) 0.6.0 only on pages that contain a quiz. Colours follow the site's light/dark theme.
+
+#### How to write one
+
+Put the quiz in markdown between the opening and closing shortcode:
+
+```markdown
+{{</* quizdown */>}}
+
+---
+shuffle_questions: false
+shuffle_answers: false
+---
+
+## What is 2 + 2?
+
+> Hint: count on your fingers.
+
+1. [ ] 3
+    > Too low. Try again.
+2. [x] 4
+3. [ ] 5
+    > Too high. Try again.
+
+## Which of these are prime?
+
+- [x] 2
+- [x] 3
+- [ ] 4
+- [x] 5
+
+## Put these in order, smallest first
+
+1. One
+2. Two
+3. Three
+
+{{</* /quizdown */>}}
+```
+
+Rules:
+
+- **Each question starts with a `##` heading.** The heading text is the question.
+- **The list type sets the question type:**
+  - **Single choice** (radio buttons): a numbered list with boxes. Mark exactly one `1. [x]`; the rest are `1. [ ]`.
+  - **Multiple choice** (checkboxes): a bulleted list with boxes. Mark every right answer `- [x]`; the rest are `- [ ]`.
+  - **Put in order**: a numbered list *without* boxes, written in the correct order. Readers see it shuffled and drag it back into order.
+- **Hint:** a `>` quote right under the heading adds a "Hint" button.
+- **Feedback on an answer:** a `>` quote indented 4 spaces under that answer is shown when it's picked.
+- **Options** go in an optional `---` block at the top: `shuffle_questions`, `shuffle_answers`, `start_on_load`, `nQuestions`.
+- Keep the indentation exactly as shown. The shortcode passes it through untouched, even in the minified build.
+
+#### Result
+
+{{< quizdown >}}
+
+---
+shuffle_questions: false
+shuffle_answers: false
+---
+
+## What is 2 + 2?
+
+> Hint: count on your fingers.
+
+1. [ ] 3
+    > Too low. Try again.
+2. [x] 4
+3. [ ] 5
+    > Too high. Try again.
+
+## Which of these are prime?
+
+- [x] 2
+- [x] 3
+- [ ] 4
+- [x] 5
+
+## Put these in order, smallest first
+
+1. One
+2. Two
+3. Three
+
+{{< /quizdown >}}

@@ -1,8 +1,6 @@
 ---
 title: Blog Notes
-menu:
-  sidebar:
-    name: Blog Notes
-    identifier: blog-notes
-    weight: 3
+description: Toha's demo posts, kept as templates. Hidden from the site; reachable only by this link.
+hidden: true
+layout: hidden-archive
 ---

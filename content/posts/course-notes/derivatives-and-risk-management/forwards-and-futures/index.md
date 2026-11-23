@@ -14,7 +14,7 @@ tags: ["Finance","DRM"]
 categories: ["Finance"]
 math: true
 ---
-[Futures Data.xlsx](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4675cb68-d5d9-4c01-a885-21192f4a5c2d/Futures_Data.xlsx)
+[Futures Data.xlsx](futures-data.xlsx)
 
 ## Forward Contract
 

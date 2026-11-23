@@ -65,7 +65,7 @@ Here for ***99% VaR***:
 
 1. A uniform distribution between the gains [-30,70].
 
-{{< img src="/posts/Notes/Financial Risk Modeling/VAR/images/cont.jpg" height="400" width="600" align="center">}}
+{{< img src="images/cont.jpg" height="400" width="600" align="center">}}
     
 {{< alert type="warning" >}} 💡 $z=\frac{x-\mu}{\sigma}$ {{< /alert >}}
 

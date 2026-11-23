@@ -33,7 +33,7 @@ We have to fit a model to the tail of the dataset beyond a cutoff
 
 Let’s have a CDF for the losses
 
-{{< img src="/posts/Notes/Financial Risk Modeling/EVT/images/cdf.jpg"float="left">}}
+{{< img src="images/cdf.jpg" float="left">}}
 
 {{< vs 2>}}
 So we now choose a value $u$, the values to the right of which, we fit the distribution to.
@@ -90,7 +90,7 @@ Maximize $\sum \ln(l)$ w.r.t. $(\xi, \beta)$
 
 # Finding VaR after GPD estimation
 
-{{< img src="/posts/Notes/Financial Risk Modeling/EVT/images/var_gdp_est.jpg"float="right">}}
+{{< img src="images/var_gdp_est.jpg" float="right">}}
 
 The VaR satisfies the following condition:
 

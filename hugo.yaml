@@ -91,12 +91,22 @@ params:
             - left: $$
               right: $$
               display: true
-            - left: \\[
-              right: \\]
+            - left: \[
+              right: \]
               display: true
-            - left: \\(
-              right: \\)
+            - left: \(
+              right: \)
               display: false
+            - left: $
+              right: $
+              display: false
+          # Single-$ inline math is used in the course notes. Skip the homepage
+          # sections that mention dollar amounts so "$X ... $XX" isn't typeset.
+          ignoredClasses:
+            - about-section
+            - experiences-section
+            - education-section
+            - nomath   # wrap literal dollar amounts in <span class="nomath">
     syntaxHighlight:
       enable: true
       services:

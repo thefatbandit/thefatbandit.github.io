@@ -1,0 +1,39 @@
+{{- /*
+  Interactive multiple-choice quiz, written in markdown inside the shortcode:
+
+    {{< quizdown >}}
+    ## Question
+    1. [ ] wrong
+    1. [x] right
+    {{< /quizdown >}}
+
+  Uses quizdown (https://github.com/bonartm/quizdown-js), pinned to 0.6.0 and
+  loaded only on pages that contain a quiz. Colours follow the site theme.
+
+  The quiz markdown is carried in a <script type="text/x-quizdown"> block
+  because `hugo --minify` would otherwise strip the indentation quizdown needs
+  (the answer hints nested under each choice). Just before quizdown renders
+  (on window load), it is copied into the .quizdown element.
+*/ -}}
+{{- if not (.Page.Store.Get "quizdown-loaded") -}}
+  {{- .Page.Store.Set "quizdown-loaded" true -}}
+  <script src="https://cdn.jsdelivr.net/npm/quizdown@0.6.0/public/build/quizdown.js"></script>
+  <script>
+    (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('script[type="text/x-quizdown"]').forEach(function (src) {
+          var box = src.previousElementSibling;
+          if (box && box.classList.contains('quizdown')) box.innerHTML = src.textContent;
+        });
+      });
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      quizdown.init({
+        primaryColor: dark ? '#22d3ee' : '#0e7490',
+        secondaryColor: dark ? '#334155' : '#e2e8f0',
+        textColor: dark ? '#e2e8f0' : '#1e293b'
+      });
+    })();
+  </script>
+{{- end }}
+<div class="quizdown"></div>
+<script type="text/x-quizdown">{{ .Inner | safeHTML }}</script>

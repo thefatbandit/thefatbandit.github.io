@@ -9,7 +9,7 @@ menu:
     identifier: frm-derivatives-var
     parent: frm
     weight: 22
-hero: images/forest.jpg
+hero: images/cover.jpg
 tags: ["Finance","FRM"]
 categories: ["Finance"]
 math: true
@@ -141,3 +141,7 @@ $$
 $$
 
 This is equivalent to a "long" position in the underlying asset and a "short" position in a zero-coupon bond maturing on date $T$.
+
+---
+
+<small>Cover photo by Maxim Hopman on [Unsplash](https://unsplash.com/photos/fiXLQXAhCfk).</small>

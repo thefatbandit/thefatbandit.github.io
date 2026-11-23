@@ -9,7 +9,7 @@ menu:
     identifier: frm-portfolio-var
     parent: frm
     weight: 18
-hero: images/forest.jpg
+hero: images/cover.jpg
 tags: ["Finance","FRM"]
 categories: ["Finance"]
 math: true
@@ -272,3 +272,7 @@ $$
 $$
 VaR_p=W_0Z(w^\intercal\beta)\sigma_m
 $$
+
+---
+
+<small>Cover photo by Tyler Prahm on [Unsplash](https://unsplash.com/photos/lmV3gJSAgbo).</small>

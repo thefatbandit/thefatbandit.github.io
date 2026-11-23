@@ -1,6 +1,6 @@
 ---
 title: "The Bungee Cord Family"
-date: 2020-04-05T12:00:00+05:30
+date: 2026-11-22T12:00:00+05:30
 description: On college friends, the family you never signed up for and can't imagine life without.
 menu:
   sidebar:

@@ -9,7 +9,7 @@ menu:
     identifier: frm-backtesting
     parent: frm
     weight: 16
-hero: images/forest.jpg
+hero: images/cover.jpg
 tags: ["Finance","FRM"]
 categories: ["Finance"]
 math: true
@@ -180,3 +180,7 @@ Now
 $$
 LR_{ind} + LR_{dep} \sim \chi^2_{2\ dof}
 $$
+
+---
+
+<small>Cover photo by Abhinav Choudhary on [Unsplash](https://unsplash.com/photos/QF_Owd1x1LI).</small>

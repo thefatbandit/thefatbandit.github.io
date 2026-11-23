@@ -9,7 +9,7 @@ menu:
     identifier: frm-bond-var
     parent: frm
     weight: 20
-hero: images/forest.jpg
+hero: images/cover.jpg
 tags: ["Finance","FRM"]
 categories: ["Finance"]
 math: true
@@ -180,3 +180,7 @@ For this formula to hold, we make the following assumption:
 - All risk factors have a perfect correlation of 1. Mathematically it manifests as $\sigma_p^2=(\sigma_1+\sigma_2)^2$. It is also called the *Term Structure of Interest Rates*.
 
 > 💡 The assumption manifests as parallel (∥) shifts in the ZCYC curve.
+
+---
+
+<small>Cover photo by Koon Chakhatrakan on [Unsplash](https://unsplash.com/photos/GihCbkBuNmQ).</small>

@@ -1,0 +1,48 @@
+{{/* Sketchbook About (site override of Toha's sections/about.html).
+     Left: who I am, in short paragraphs, with labelled social links.
+     Right: "right now" notes, built from every position in experiences.yaml
+     that has no end date, so they stay in sync with the timeline. */}}
+{{ $sectionID := .section.id | default (replace (lower .section.name) " " "-") }}
+{{ $author := hugo.Data.author }}
+{{ with (index hugo.Data site.Language.Lang).author }}{{ $author = . }}{{ end }}
+{{ $sections := (index hugo.Data site.Language.Lang).sections | default hugo.Data.sections }}
+
+<div class="container anchor about-section sk-section sk-about" id="{{ $sectionID }}">
+  <div class="row g-5">
+    <div class="col-lg-7">
+      <p class="sk-eyebrow">{{ .section.name }}</p>
+      <h2 class="sk-h2">{{ $author.name }}</h2>
+      {{ with .designation }}<p class="sk-about__role">{{ . }}</p>{{ end }}
+      <div class="sk-about__summary">{{ .summary | markdownify }}</div>
+      <ul class="sk-links">
+        {{ range .socialLinks }}
+          <li>
+            <a href="{{ .url }}" target="_blank" rel="{{ .rel | default "noopener" }}">
+              <i class="{{ .icon }}" aria-hidden="true"></i><span>{{ .name }}</span>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+
+    {{ with $sections.experiences }}
+    <div class="col-lg-5">
+      <p class="sk-hand sk-about__now-label">right now <span aria-hidden="true">↓</span></p>
+      <ul class="sk-notes">
+        {{ range .experiences }}
+          {{ $company := .company }}
+          {{ range .positions }}
+            {{ if not .end }}
+              <li class="sk-note">
+                <p class="sk-note__role">{{ .designation }}</p>
+                <p class="sk-note__where">{{ $company.name }} · since {{ .start }}</p>
+                {{ with index .responsibilities 0 }}<p class="sk-note__what">{{ . | markdownify }}</p>{{ end }}
+              </li>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </div>
+</div>

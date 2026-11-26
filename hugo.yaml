@@ -141,7 +141,7 @@ params:
     contactMe:
       enable: true
     credentials:
-      enable: true
+      enable: false        # hides the Toha logo and "Powered by Hugo" badges
     newsletter:
       enable: false
     disclaimer:

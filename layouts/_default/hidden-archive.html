@@ -33,6 +33,13 @@
 {{ define "content" }}
 <section class="content-section" id="content-section">
   <div class="content container-fluid" id="content">
+    {{- /* site override: a sketchbook header above the cards */ -}}
+    <header class="sk-list-head">
+      <p class="sk-eyebrow">{{ if eq .RelPermalink "/posts/" }}Blog{{ else }}{{ with .Parent }}{{ .Title }}{{ end }}{{ end }}</p>
+      <h1 class="sk-h1">{{ if eq .RelPermalink "/posts/" }}Musings, notes and things I've learned{{ else }}{{ .Title }}{{ end }}</h1>
+      {{ with .Description }}<p class="sk-list-head__lede">{{ . }}</p>{{ end }}
+      <p class="sk-hand sk-list-head__note">pick one <span aria-hidden="true">↓</span></p>
+    </header>
     <div class="container-fluid post-card-holder" id="post-card-holder">
       {{ $posts := where .RegularPagesRecursive "Layout" "!=" "search" }}
       {{ $numShow := site.Params.features.pagination.maxPostsPerPage | default 12}}

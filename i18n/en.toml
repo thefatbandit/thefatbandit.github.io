@@ -1,3 +1,6 @@
 # Overrides for the Toha theme's English strings (theme defaults: toha/i18n/en.toml)
 [responsibilities]
 other = "Key Achievements:"
+
+[toc_heading]
+other = "On this page"

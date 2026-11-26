@@ -9,15 +9,10 @@
 {{ end }}
 
 
-<div class="container-fluid anchor pb-5 recent-posts-section">
-  {{ if not (.section.hideTitle) }}
-    <h1 class="text-center">
-        <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
-  {{ else }}
-    <h1 class="text-center" style="display: none">
-        <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
-  {{ end }}
-  <div class="container">
+<div class="container anchor recent-posts-section sk-section sk-posts">
+  <p class="sk-eyebrow"><span id="{{ $sectionID }}"></span>{{ .section.name }}</p>
+  <h2 class="sk-h2">Things I've written</h2>
+  <div>
     <div class="row" id="recent-post-cards">
       {{ $posts := where (where site.RegularPages.ByDate.Reverse "Type" "posts" ) "Layout" "!=" "search" }}
       {{ $posts = where $posts "Params.hidden" "!=" true }}
@@ -28,13 +23,5 @@
       {{ end }}
     </div>
   </div>
-  {{ if (.section.showMoreButton) }}
-  <div class="container" style="
-  display: flex;
-  align-items: center;
-  justify-content: center;">
-    <a href="/posts/" title="Show More" class="float-end btn btn-outline-info btn-sm" >
-    {{ i18n "show_more"}}</a>
-  </div>
-  {{ end }}
+  <p class="sk-posts__more"><a href="{{ "posts/" | relLangURL }}">All posts, GMAT notes and course notes <span aria-hidden="true">→</span></a></p>
 </div>

@@ -1,0 +1,30 @@
+{{/* Sketchbook Education (site override of Toha's sections/education.html).
+     Uses the fields in data/en/sections/education.yaml: institution, name,
+     timeframe, grade, extracurricularActivities, customSections. */}}
+{{ $sectionID := .section.id | default (replace (lower .section.name) " " "-") }}
+
+<div class="container anchor education-section sk-section sk-edu">
+  <p class="sk-eyebrow"><span id="{{ $sectionID }}"></span>{{ .section.name }}</p>
+  <h2 class="sk-h2">Where I learned</h2>
+
+  {{ range .degrees }}
+    <article class="sk-card sk-edu__card">
+      <header class="sk-edu__head">
+        <h3 class="sk-co__name">
+          {{ $inst := .institution }}
+          {{ with $inst.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $inst.name }}</a>{{ else }}{{ $inst.name }}{{ end }}
+        </h3>
+        <p class="sk-meta">{{ .timeframe }}</p>
+      </header>
+      <p class="sk-edu__degree">{{ .name }}</p>
+      {{ with .grade }}<p class="sk-meta">{{ .scale }} {{ .achieved }} out of {{ .outOf }}</p>{{ end }}
+      {{ range .customSections }}<p class="sk-meta">{{ .name }}: {{ .content | markdownify }}</p>{{ end }}
+      {{ with .extracurricularActivities }}
+        <h4 class="sk-edu__sub">Outside class</h4>
+        <ul class="sk-role__points">
+          {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
+        </ul>
+      {{ end }}
+    </article>
+  {{ end }}
+</div>

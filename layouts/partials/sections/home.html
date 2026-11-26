@@ -1,0 +1,49 @@
+{{/* Sketchbook hero (site override of Toha's sections/home.html).
+     The friends illustration is the signature: shown sharp, not blurred.
+     Keep `#home img.rounded-circle`: assets/scripts/golu.js counts taps on it.
+     Keep #typed + #typing-carousel-data: Toha's pages/home.js types the tagline. */}}
+{{ $author := hugo.Data.author }}
+{{ with (index hugo.Data site.Language.Lang).author }}{{ $author = . }}{{ end }}
+{{ $name := $author.nickname | default $author.name }}
+
+{{ $art := resources.Get (site.Params.background | default "/images/site/background.jpg") }}
+{{ $artS := $art.Resize "700x webp q80" }}
+{{ $artM := $art.Resize "1100x webp q80" }}
+{{ $artL := $art.Resize "1401x webp q82" }}
+{{ $artFallback := $art.Resize "1200x q82" }}
+
+{{ $photo := resources.Get ($author.image | default "/images/default-avatar.png") }}
+{{ $photo = $photo.Fill "240x240 center" }}
+
+<section class="container-fluid home sk-hero" id="home">
+  <div class="sk-hero__art">
+    <picture>
+      <source type="image/webp"
+        srcset="{{ $artS.RelPermalink }} 700w, {{ $artM.RelPermalink }} 1100w, {{ $artL.RelPermalink }} 1401w"
+        sizes="100vw" />
+      <img src="{{ $artFallback.RelPermalink }}" width="{{ $artFallback.Width }}" height="{{ $artFallback.Height }}"
+        alt="Illustration of {{ $name }} with four friends and a toddler, grinning in front of an old wall"
+        fetchpriority="high" decoding="async" />
+    </picture>
+  </div>
+
+  <div class="sk-hero__card">
+    <img src="{{ $photo.RelPermalink }}" width="120" height="120"
+      class="rounded-circle sk-hero__photo" alt="Photo of {{ $name }}" />
+    <div class="sk-hero__text">
+      <p class="sk-hand sk-hero__hello">hi, I'm</p>
+      <h1 class="sk-hero__name">{{ $name }}</h1>
+      {{ with $author.summary }}
+        <p class="sk-hero__tagline">
+          <span class="visually-hidden">{{ delimit . " · " }}</span>
+          <span class="sk-hero__typing" aria-hidden="true"><span id="typed" class="typed"></span></span>
+          <span class="sk-hero__static" aria-hidden="true">{{ delimit . " · " }}</span>
+        </p>
+        <ul id="typing-carousel-data" hidden>
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+      {{ end }}
+    </div>
+    <a href="#about" class="sk-hero__more">More about me <span aria-hidden="true">↓</span></a>
+  </div>
+</section>

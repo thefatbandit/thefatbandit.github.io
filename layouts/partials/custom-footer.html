@@ -1,6 +1,10 @@
 {{/* The theme's footer, plus the home-page easter egg (see assets/scripts/golu.js).
      Wired up via params.footer.template in hugo.yaml, so no theme file is copied. */}}
 {{ partial "footer.html" . }}
+{{/* A small way into the 404 pond: /hippos/ doesn't exist, so it lands on layouts/404.html. */}}
+<p class="sk-pond-link">
+  <a href="{{ "hippos/" | relLangURL }}"><span class="sk-pond-link__ascii" aria-hidden="true">~ &gt;&lt;&gt; ~</span> Lost? The hippos know the way <span aria-hidden="true">→</span></a>
+</p>
 {{ if .IsHome }}
   {{ with resources.Get "scripts/golu.js" | minify | fingerprint }}
     <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>

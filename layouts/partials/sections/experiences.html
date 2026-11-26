@@ -1,0 +1,45 @@
+{{/* Sketchbook Experience (site override of Toha's sections/experiences.html).
+     One quiet timeline, newest first. Current roles carry a "now" tag;
+     no numbered circles and no repeated "Key Achievements" label. */}}
+{{ $sectionID := .section.id | default (replace (lower .section.name) " " "-") }}
+
+<div class="container anchor experiences-section sk-section sk-exp">
+  <p class="sk-eyebrow"><span id="{{ $sectionID }}"></span>{{ .section.name }}</p>
+  <h2 class="sk-h2">Where I've been</h2>
+
+  <ol class="sk-timeline">
+    {{ range .experiences }}
+      {{ $first := index (last 1 .positions) 0 }}
+      {{ $latest := index (first 1 .positions) 0 }}
+      <li class="sk-timeline__item">
+        <div class="sk-co">
+          <h3 class="sk-co__name">
+            {{ $co := .company }}
+            {{ with $co.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $co.name }}</a>{{ else }}{{ $co.name }}{{ end }}
+          </h3>
+          <p class="sk-meta">
+            {{ $first.start }} – {{ $latest.end | default "Present" }}
+            {{ with .company.location }}<span aria-hidden="true"> · </span>{{ . }}{{ end }}
+          </p>
+          {{ with .company.overview }}<p class="sk-co__overview">{{ . | markdownify }}</p>{{ end }}
+        </div>
+        <ul class="sk-roles">
+          {{ range .positions }}
+            <li class="sk-role">
+              <h4 class="sk-role__title">
+                {{ .designation }}
+                {{ if not .end }}<span class="sk-now">now</span>{{ end }}
+              </h4>
+              <p class="sk-meta">{{ .start }} – {{ .end | default "Present" }}</p>
+              {{ with .responsibilities }}
+                <ul class="sk-role__points">
+                  {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
+                </ul>
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      </li>
+    {{ end }}
+  </ol>
+</div>

@@ -1,0 +1,59 @@
+{{- /* Copy of Toha's _default/list.html (v4.16.0) plus the sketchbook header. */ -}}
+{{ define "navbar" }}
+    {{ partial "navigators/navbar.html" . }}
+{{ end }}
+
+{{ define "sidebar" }}
+  {{ $homePage:="#" }}
+  {{ if hugo.IsMultilingual }}
+    {{ $homePage = (path.Join (cond ( eq .Language.Lang "en") "" .Language.Lang) .Type) }}
+  {{ end }}
+
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="{{ "search" | relLangURL }}">
+          <input type="text" name="keyword" value="" placeholder="{{ i18n "search" }}" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="{{ .Type | relLangURL }}" data-filter="all">{{ i18n .Type }}</a></li>
+            <div class="subtree">
+                {{ partial "navigators/sidebar.html" (dict "menuName" "sidebar" "menuItems" site.Menus.sidebar "ctx" .) }}
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
+
+{{ define "content" }}
+<section class="content-section" id="content-section">
+  <div class="content container-fluid" id="content">
+    {{- /* site override: a sketchbook header above the cards */ -}}
+    <header class="sk-list-head">
+      <p class="sk-eyebrow">{{ if eq .RelPermalink "/posts/" }}Blog{{ else }}{{ with .Parent }}{{ .Title }}{{ end }}{{ end }}</p>
+      <h1 class="sk-h1">{{ if eq .RelPermalink "/posts/" }}Musings, notes and things I've learned{{ else }}{{ .Title }}{{ end }}</h1>
+      {{ with .Description }}<p class="sk-list-head__lede">{{ . }}</p>{{ end }}
+      <p class="sk-hand sk-list-head__note">pick one <span aria-hidden="true">↓</span></p>
+    </header>
+    <div class="container-fluid post-card-holder" id="post-card-holder">
+      {{ $posts := where .RegularPagesRecursive "Layout" "!=" "search" }}
+      {{ $posts = where $posts "Params.hidden" "!=" true }}
+      {{ $numShow := site.Params.features.pagination.maxPostsPerPage | default 12}}
+      {{ $paginator := .Paginate $posts $numShow }}
+      {{ range $paginator.Pages }}
+        {{ if .Layout }}
+          {{/* ignore the search.md file*/}}
+        {{ else }}
+          {{ partial "cards/post.html" . }}
+        {{ end }}
+      {{ end }}
+    </div>
+    <div class="paginator">
+      {{ partial "pagination.html" . }}
+    </div>
+  </div>
+</section>
+{{ end }}

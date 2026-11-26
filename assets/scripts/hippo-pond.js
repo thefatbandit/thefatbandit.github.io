@@ -33,20 +33,22 @@
   var SAND = ".,:'`.,..";
 
   // ------------------------------------------------------------ theme tokens
+  // Sketchbook palette (assets/styles/sketchbook.scss): card-white / night-navy
+  // pond, sky water and ripples, navy ink, pink highlights. Hippo skins unchanged.
   var THEMES = {
     light: {
-      pond: '#eef2f6', grid: 'rgba(15,23,42,0.045)', water: [14, 116, 144], waterBg: 'rgba(14,116,144,0.06)',
-      ripple: '14,116,144', sand: 'rgba(146,118,78,', glyphTo: [15, 23, 42], glyphK: 0.55, tileA: 0.42, ink: 'light',
+      pond: '#ffffff', grid: 'rgba(27,36,64,0.045)', water: [31, 111, 168], waterBg: 'rgba(124,196,239,0.12)',
+      ripple: '31,111,168', sand: 'rgba(196,160,92,', glyphTo: [27, 36, 64], glyphK: 0.55, tileA: 0.42, ink: 'light',
       skin: '#857a8c', skinHi: '#b2a5bc', skinLo: '#5a5064', belly: '#c49aa6', muzzle: '#a8929c',
       baby: { skin: '#a3899a', skinHi: '#c9b0bf', skinLo: '#76606f', belly: '#d9a9b6', muzzle: '#bf9fae' },
-      pink: '#e0899f', dark: '#2a2230', fish: '71,105,125', bannerText: '#1e293b'
+      pink: '#e0607e', dark: '#2a2230', fish: '31,111,168', bannerText: '#1b2440'
     },
     dark: {
-      pond: '#070b14', grid: 'rgba(148,163,184,0.055)', water: [34, 211, 238], waterBg: 'rgba(34,211,238,0.05)',
-      ripple: '34,211,238', sand: 'rgba(196,170,128,', glyphTo: [255, 255, 255], glyphK: 0.45, tileA: 0.5, ink: 'dark',
+      pond: '#1b2540', grid: 'rgba(238,241,247,0.05)', water: [124, 196, 239], waterBg: 'rgba(124,196,239,0.07)',
+      ripple: '124,196,239', sand: 'rgba(243,217,139,', glyphTo: [255, 255, 255], glyphK: 0.45, tileA: 0.5, ink: 'dark',
       skin: '#9b8fae', skinHi: '#cbc1d9', skinLo: '#5d5470', belly: '#d3a9b6', muzzle: '#b79fb0',
       baby: { skin: '#b39aae', skinHi: '#dcc7d6', skinLo: '#6f5a6b', belly: '#e2b3c1', muzzle: '#c9a8bb' },
-      pink: '#e78ea6', dark: '#140f18', fish: '156,195,213', bannerText: '#f1f5f9'
+      pink: '#f2a7b8', dark: '#140f18', fish: '170,179,200', bannerText: '#eef1f7'
     }
   };
   var th = THEMES.light, dark = false;
@@ -127,8 +129,19 @@
       }
     }
     if (dark) { // a few stars above the water
-      g.fillStyle = 'rgba(226,232,240,0.5)';
+      g.fillStyle = 'rgba(238,241,247,0.5)';
       for (var k = 0; k < 18; k++) g.fillText('.', Math.random() * W, Math.random() * waterY * 0.8);
+    } else { // a couple of ASCII clouds in the sky
+      var CLOUD = ['  .--.   ', '.(    ).-.', '(___.__)__)'];
+      g.fillStyle = 'rgba(31,111,168,0.28)';
+      [[0.16, 0.18], [0.7, 0.1], [0.88, 0.32]].forEach(function (c) {
+        if (c[1] * waterY + 3 * ch > waterY * 0.85) return;
+        CLOUD.forEach(function (line, li) {
+          for (var ci = 0; ci < line.length; ci++) {
+            if (line[ci] !== ' ') g.fillText(line[ci], c[0] * W + ci * cw, c[1] * waterY + li * ch);
+          }
+        });
+      });
     }
   }
 

@@ -1,81 +1,61 @@
 // Your custom styles. Toha loads this file last, so anything here wins.
 
+// Sketchbook palette, layout and blog styles (homepage, lists, posts).
+// Defines the --sk-* tokens used below.
+@import "sketchbook";
+
 // ---------------------------------------------------------------------------
 // 404: ASCII hippo pond (layouts/404.html + assets/scripts/hippo-pond.js)
-// Quiet page around one signature element. Colours follow Toha's slate +
-// cyan palette; the button uses cyan-700 so white text clears 4.5:1 (5.4:1).
+// One signature element, the pond, taped to the page like a sketch.
+// Colours are the sketchbook tokens; contrast is listed in sketchbook.scss
+// (sky on paper 5.1:1 light, 9.1:1 dark; paper on the sky button 5.4:1 / 9.1:1).
 // ---------------------------------------------------------------------------
-body.kind-404 {
-  --pond-heading: #1e293b;
-  --pond-muted: #64748b;   // 4.6:1 on Toha's light background
-  --pond-edge: rgba(15, 23, 42, 0.08);
-  --pond-accent: #0e7490;  // white text 5.4:1
-  --pond-accent-hover: #155e75; // darker on hover keeps contrast (7.3:1)
-  --pond-link: #0e7490;
-  --pond-shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 12px 40px rgba(15, 80, 100, 0.12);
-}
-
-html[data-theme='dark'] body.kind-404 {
-  --pond-heading: #f1f5f9;
-  --pond-muted: #95aed1;
-  --pond-edge: rgba(148, 163, 184, 0.14);
-  --pond-link: #22d3ee;
-  --pond-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 40px rgba(0, 0, 0, 0.45);
-}
-
 .pond-404 {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 7rem 1rem 5rem;
+  padding: 6.5rem 1rem 4.5rem;
   text-align: center;
+  color: var(--sk-ink);
+
+  &__head {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__oops {
+    position: absolute;
+    top: 0;
+    left: -4.6rem;
+    margin: 0;
+    font-size: 1.9rem;
+    color: var(--sk-sky);
+    transform: rotate(-10deg);
+  }
 
   &__code {
-    font-size: clamp(3rem, 9vw, 5rem);
-    font-style: italic;
+    margin: 0;
+    font-family: var(--sk-display);
+    font-size: clamp(4rem, 12vw, 6.5rem);
     font-weight: 800;
     line-height: 1;
-    margin: 0;
-    color: var(--pond-accent);
+    letter-spacing: -0.02em;
+    color: var(--sk-ink);
+    // pink highlighter under the number
+    background: linear-gradient(transparent 64%, var(--sk-pink) 64%, var(--sk-pink) 90%, transparent 90%);
+    padding: 0 0.15em;
   }
 
   &__title {
-    margin: 0.75rem auto 1.75rem;
-    max-width: 34rem;
-    color: var(--pond-heading);
-    font-weight: 700;
-  }
-
-  &__sub {
-    margin: 0 0 1.75rem;
-    color: var(--pond-muted);
-  }
-
-  &__stage {
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid var(--pond-edge);
-    box-shadow: var(--pond-shadow);
-    line-height: 0;
-  }
-
-  canvas {
-    display: block;
-    width: 100%;
-    cursor: crosshair;
-    touch-action: pan-y;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: transparent;
-
-    &:focus-visible {
-      outline: 3px solid var(--pond-accent-hover);
-      outline-offset: -3px;
-    }
+    text-align: center;
+    margin: 1rem auto 1.75rem;
+    max-width: 32rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--sk-ink);
   }
 
   // How-to-play hints, above the pond so people know it's interactive.
-  // Accent text on the tinted pill stays above 4.5:1 in both themes.
   &__hints {
     list-style: none;
     display: flex;
@@ -83,7 +63,7 @@ html[data-theme='dark'] body.kind-404 {
     justify-content: center;
     gap: 0.6rem 0.75rem;
     padding: 0;
-    margin: 0 0 1rem;
+    margin: 0 0 1.75rem;
   }
 
   &__hint {
@@ -92,16 +72,17 @@ html[data-theme='dark'] body.kind-404 {
     gap: 0.55rem;
     min-height: 44px;
     padding: 0.4rem 1.1rem 0.4rem 0.8rem;
-    border: 1.5px solid var(--pond-hint-edge);
+    border: 1.5px solid var(--sk-line);
     border-radius: 999px;
-    background: var(--pond-hint-bg);
-    color: var(--pond-heading);
+    background: var(--sk-card);
+    color: var(--sk-ink);
     font-size: 1.05rem;
     line-height: 1.3;
+    box-shadow: var(--sk-shadow);
     animation: pond-hint-glow 2.4s ease-in-out 0.6s 2;
 
     strong {
-      color: var(--pond-link);
+      color: var(--sk-sky);
       font-weight: 800;
     }
   }
@@ -110,36 +91,59 @@ html[data-theme='dark'] body.kind-404 {
     width: 22px;
     height: 22px;
     flex: none;
-    fill: var(--pond-link);
-    stroke: var(--pond-link);
+    fill: var(--sk-sky);
+    stroke: var(--sk-sky);
   }
-}
 
-body.kind-404 {
-  --pond-hint-bg: rgba(14, 116, 144, 0.07);
-  --pond-hint-edge: rgba(14, 116, 144, 0.45);
-}
+  // The pond, taped to the page.
+  &__stage {
+    position: relative;
+    padding: 10px;
+    border-radius: 20px;
+    background: var(--sk-card);
+    border: 1px solid var(--sk-line);
+    box-shadow: var(--sk-shadow), 0 24px 60px rgba(18, 26, 46, 0.14);
+    line-height: 0;
+    transform: rotate(-0.4deg);
 
-html[data-theme='dark'] body.kind-404 {
-  --pond-hint-bg: rgba(34, 211, 238, 0.09);
-  --pond-hint-edge: rgba(34, 211, 238, 0.45);
-}
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: -12px;
+      width: 104px;
+      height: 24px;
+      border-radius: 3px;
+      background: color-mix(in srgb, var(--sk-pink) 75%, transparent);
+    }
+    &::before { left: 9%; transform: rotate(-4deg); }
+    &::after { right: 9%; transform: rotate(3deg); }
+  }
 
-// a soft glow twice on arrival to draw the eye, then it rests
-@keyframes pond-hint-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(8, 145, 178, 0); }
-  50% { box-shadow: 0 0 0 6px rgba(8, 145, 178, 0.18); }
-}
+  canvas {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    cursor: crosshair;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
 
-@media (prefers-reduced-motion: reduce) {
-  .pond-404__hint { animation: none; }
-}
+    &:focus-visible {
+      outline: 3px solid var(--sk-sky);
+      outline-offset: 3px;
+    }
+  }
 
-@media (max-width: 640px) {
-  .pond-404__hint { font-size: 1rem; }
-}
-
-.pond-404 {
+  &__caption {
+    text-align: center;
+    margin: 1rem 0 0;
+    font-size: 1.5rem;
+    color: var(--sk-muted);
+  }
 
   &__actions {
     display: flex;
@@ -147,139 +151,199 @@ html[data-theme='dark'] body.kind-404 {
     align-items: center;
     justify-content: center;
     gap: 0.5rem 1.25rem;
-    margin-top: 1.75rem;
+    margin-top: 1.5rem;
   }
 
   &__btn {
     display: inline-flex;
     align-items: center;
+    gap: 0.4rem;
     min-height: 44px;
     padding: 0 1.5rem;
     border-radius: 999px;
-    background: var(--pond-accent);
-    color: #fff !important;
+    background: var(--sk-sky);
+    color: var(--sk-paper) !important;
     font-weight: 700;
     text-decoration: none !important;
-    transition: background-color 0.2s ease-out;
 
-    &:hover,
-    &:focus-visible {
-      background: var(--pond-accent-hover);
-    }
+    &:hover { filter: brightness(1.08); }
+    &:focus-visible { outline: 3px solid var(--sk-pink); outline-offset: 3px; }
   }
 
   &__link {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    color: var(--pond-link) !important;
+    color: var(--sk-sky) !important;
     font-weight: 600;
+    text-underline-offset: 0.18em;
   }
+}
+
+// a soft glow twice on arrival to draw the eye, then it rests
+@keyframes pond-hint-glow {
+  0%, 100% { box-shadow: var(--sk-shadow), 0 0 0 0 rgba(31, 111, 168, 0); }
+  50% { box-shadow: var(--sk-shadow), 0 0 0 6px rgba(31, 111, 168, 0.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pond-404__hint { animation: none; }
+  .pond-404__stage,
+  .pond-404__oops { transform: none; }
 }
 
 @media (max-width: 640px) {
-  .pond-404 {
-    padding-top: 5.5rem;
-  }
+  .pond-404 { padding-top: 5.5rem; }
+  .pond-404__hint { font-size: 1rem; }
+  .pond-404__oops { left: -1.5rem; top: -1.6rem; font-size: 1.6rem; }
+  .pond-404__stage { padding: 6px; transform: none; }
 }
 
 // ---------------------------------------------------------------------------
-// Easter egg: "We love Golu" banner towed by a little plane (home page only,
-// see assets/scripts/golu.js). Banner text is cyan-700 on white (5.4:1).
+// Easter egg: a little plane, flown by a baby hippo, tows a hand-lettered
+// "We love Golu ♥" banner across the homepage and sheds hearts and stars
+// (assets/scripts/golu.js). Banner text: ink #1b2440 on pink, 10.2:1 / 9.1:1.
 // ---------------------------------------------------------------------------
 .golu-flyby {
-  --golu-ink: #0e7490;
-  --golu-paper: #ffffff;
-  --golu-rope: rgba(100, 116, 139, 0.85);
+  --golu-rope: var(--sk-ink);
   position: fixed;
-  top: 84px;
+  top: 76px;
   left: 0;
   width: 100%;
-  height: 64px;
+  height: 170px;
   overflow: hidden;
   pointer-events: none;
   z-index: 1080;
 
   &__craft {
     position: absolute;
-    top: 14px;
+    top: 24px;
     left: 0;
-    display: flex;
-    align-items: center;
-    animation: golu-fly 11s linear forwards;
+    animation: golu-fly-rtl 11s linear forwards;
     will-change: transform;
   }
+  &--ltr &__craft { animation-name: golu-fly-ltr; }
+
+  // Swoop: a gentle wave up and down along the way.
+  &__swoop {
+    display: flex;
+    align-items: center;
+    animation: golu-swoop 2.6s ease-in-out infinite;
+  }
+  // Every other flight comes in from the left: plane leads, banner trails.
+  &--ltr &__swoop { flex-direction: row-reverse; }
+  &--ltr &__plane { transform: scaleX(-1); }
 
   &__plane {
-    color: var(--golu-ink);
     flex: none;
-    animation: golu-bob 1.4s ease-in-out infinite;
+    overflow: visible;
+    filter: drop-shadow(0 6px 10px rgba(18, 26, 46, 0.25));
   }
-
-  &__prop {
-    transform-origin: 3px 12px;
-    animation: golu-spin 0.12s linear infinite;
-  }
+  &__tilt { animation: golu-bob 1.3s ease-in-out infinite; transform-origin: 40px 34px; transform-box: view-box; }
+  &__prop { transform-origin: 7px 34px; transform-box: view-box; animation: golu-spin 0.1s linear infinite; }
+  &__scarf { transform-origin: 50px 18px; transform-box: view-box; animation: golu-scarf 0.35s ease-in-out infinite alternate; }
 
   &__rope {
-    width: 34px;
-    border-top: 1.5px dashed var(--golu-rope);
+    flex: none;
+    width: 40px;
+    border-top: 2px dashed var(--golu-rope);
+    filter: drop-shadow(0 0 1px var(--sk-paper));
   }
 
   &__banner {
+    position: relative;
     flex: none;
-    padding: 0.3rem 0.9rem;
-    border: 1.5px solid var(--golu-ink);
-    border-radius: 4px 10px 10px 4px;
-    background: var(--golu-paper);
-    color: var(--golu-ink);
-    font-weight: 800;
-    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: baseline;
+    padding: 0.35rem 1.5rem 0.45rem 1rem;
+    background: var(--sk-pink);
+    color: #1b2440;
+    font-family: var(--sk-hand);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1;
     white-space: nowrap;
-    box-shadow: 0 6px 18px rgba(15, 80, 100, 0.18);
+    // swallow-tail end
+    clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 50%, 100% 100%, 0 100%);
     transform-origin: left center;
     animation: golu-flutter 0.9s ease-in-out infinite;
   }
-
-  &__heart {
-    color: #e0899f;
+  &--ltr &__banner {
+    padding: 0.35rem 1rem 0.45rem 1.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 14px 50%);
+    transform-origin: right center;
   }
 
-  // Reduce Motion: no flight, the banner just fades in and out in the middle.
-  &--still .golu-flyby__craft {
+  // Each letter rides the wave a beat behind the last.
+  &__ch {
+    display: inline-block;
+    white-space: pre;
+    animation: golu-wave 1s ease-in-out infinite;
+    animation-delay: calc(var(--i) * -0.08s);
+  }
+  &__heart { color: #c2255c; }
+
+  // Confetti shed along the way.
+  &__bit {
+    position: absolute;
+    font-size: 1.4rem;
+    line-height: 1;
+    animation: golu-fall 1.7s cubic-bezier(.3, .6, .5, 1) forwards;
+  }
+
+  // Reduce Motion: no flight and no confetti, the banner just fades in and out.
+  &--still &__craft {
     left: 50%;
     transform: translateX(-50%);
     animation: golu-fade 3.2s ease forwards;
   }
-  &--still .golu-flyby__plane,
-  &--still .golu-flyby__rope,
-  &--still .golu-flyby__banner,
-  &--still .golu-flyby__prop {
+  &--still &__swoop,
+  &--still &__tilt,
+  &--still &__prop,
+  &--still &__scarf,
+  &--still &__banner,
+  &--still &__ch {
     animation: none;
   }
 }
 
-html[data-theme='dark'] .golu-flyby {
-  --golu-ink: #22d3ee;
-  --golu-paper: #1e293b;
-  --golu-rope: rgba(148, 163, 184, 0.7);
-}
-
-@keyframes golu-fly {
+@keyframes golu-fly-rtl {
   from { transform: translateX(calc(100vw + 24px)); }
   to { transform: translateX(-110%); }
 }
+@keyframes golu-fly-ltr {
+  from { transform: translateX(-110%); }
+  to { transform: translateX(calc(100vw + 24px)); }
+}
+@keyframes golu-swoop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(40px); }
+}
 @keyframes golu-bob {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-4px) rotate(-3deg); }
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-6deg); }
+  75% { transform: rotate(5deg); }
 }
 @keyframes golu-flutter {
   0%, 100% { transform: skewY(0deg); }
-  50% { transform: skewY(-2deg); }
+  50% { transform: skewY(-2.5deg); }
+}
+@keyframes golu-wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 @keyframes golu-spin {
   0%, 100% { transform: scaleY(1); }
-  50% { transform: scaleY(0.2); }
+  50% { transform: scaleY(0.15); }
+}
+@keyframes golu-scarf {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(14deg); }
+}
+@keyframes golu-fall {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg) scale(0.6); }
+  15% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--dx), 120px) rotate(var(--rot)) scale(1); }
 }
 @keyframes golu-fade {
   0% { opacity: 0; }

@@ -5,9 +5,10 @@
 {{ define "content" }}
 <section class="pond-404">
   <div class="pond-404__head">
+    <p class="sk-hand pond-404__oops" aria-hidden="true">uh-oh…</p>
     <h1 class="pond-404__code">404</h1>
-    <h4 class="pond-404__title">This page sank to the bottom of the pond. The hippos haven't seen it either.</h4>
   </div>
+  <p class="pond-404__title">This page sank to the bottom of the pond. The hippos haven't seen it either.</p>
 
   <ul class="pond-404__hints" aria-label="How to play">
     <li class="pond-404__hint">
@@ -27,9 +28,10 @@
             aria-label="An ASCII-art pond, seen side-on, with a mother hippo, her baby and a few small fish, under a little sign that reads For Fiona. Tap the water to make a ripple, or press and hold to drop a watermelon for a hippo to eat. With the pond focused, press Enter for a ripple or F to feed.">
     </canvas>
   </div>
+  <p class="sk-hand pond-404__caption">hippos: 2 · fish: 4 · pages found: 0</p>
 
   <div class="pond-404__actions">
-    <a class="pond-404__btn" href="{{ "/" | relLangURL }}">Take me home</a>
+    <a class="pond-404__btn" href="{{ "/" | relLangURL }}"><span aria-hidden="true">←</span> Take me home</a>
     <a class="pond-404__link" href="{{ "/posts/" | relLangURL }}">or read the blog</a>
   </div>
 </section>

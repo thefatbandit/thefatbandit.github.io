@@ -6,15 +6,16 @@ section:
   showOnNavbar: true
   template: sections/about.html
 
-designation: Senior Technical Project Manager
+designation: AI Data Consultant
 company:
-  name: Mercor
-  url: "https://mercor.com"
+  name: Self-employed
 
 summary: >-
-  I run AI data programs for frontier labs at [Mercor](https://mercor.com), where I joined as employee #5 in
-  the India office. I've piloted and scaled pipelines for audio, health and PhD-level education datasets,
-  and today I lead payments, data quality and expert management for one of the company's largest projects.
+  I help companies monetize their data with the top AI data vendors, drawing on nearly two years building
+  data programs for frontier labs at [Mercor](https://mercor.com), where I joined as India-Ops employee #5.
+  There I piloted and scaled pipelines for audio, health and PhD-level education datasets, led data quality
+  and PnL for one of the company's largest projects, and now audit data pipelines across projects. I'm also
+  Chief Growth Officer of YourScore, the test-prep arm of Admissions Gateway.
   Before Mercor I was a strategy consultant at Arthur D. Little in the Middle East and India. I studied at
   IIT Kharagpur (dual degree in Chemical Engineering and Finance, minor in Computer Science), where I led the
   AI team of the Autonomous Ground Vehicle group and took F1 cars around the Indy 500 track autonomously.

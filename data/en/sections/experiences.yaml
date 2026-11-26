@@ -7,22 +7,54 @@ section:
 
 experiences:
 - company:
+    name: Self-employed
+    location: San Francisco Bay Area (remote)
+    overview: Independent consulting on AI training data.
+  positions:
+  - designation: AI Data Consultant
+    start: Oct 2026
+    responsibilities:
+    - Helping companies monetize their data with top data vendors like Mercor, Micro1, Handshake AI, Turing and AfterQuery.
+    - "Companies helped to date: media agencies; healthcare (health-tech startups, hospitals, diagnostic centres); research and development labs; fintech startups; call centres and BPOs."
+
+- company:
     name: Mercor
     url: "https://mercor.com"
     location: San Francisco and India
     overview: "Joined as India-Ops employee #5"
   positions:
-  - designation: Senior Technical Project Manager
-    start: Sep 2025
+  - designation: Data Quality Auditor
+    start: Oct 2026
     responsibilities:
-    - Lead the payments, data quality and expert management functions of a $X million-per-month project with a frontier lab, which led to $XX million in recurring annual revenue from similar projects.
+    - Recovering from a Dark Knight Rises-level back injury. Shifted to auditing data pipelines across projects as an expert for leading frontier labs.
+  - designation: Senior Technical Project Manager
+    start: Aug 2025
+    end: Sep 2026
+    responsibilities:
+    - Led the data quality and PnL management functions of a $X million-per-month project with a frontier lab, which led to $XX million in recurring annual revenue from similar projects.
     - Built the at-scale hiring pipeline for Technical Project Managers, which has hired 50+ TPMs into the company.
   - designation: Technical Project Manager
     start: Feb 2025
-    end: Aug 2025
+    end: Jul 2025
     responsibilities:
     - Piloted Mercor's first audio dataset pipeline with a frontier lab, built the entire pipeline, and scaled it to $X million per month in revenue.
     - Piloted and scaled PhD-level education projects for a key benchmark dataset that evaluates AI agents on education tasks for a large frontier lab, leading to $XX million in recurring revenue.
+
+- company:
+    name: Admissions Gateway
+    location: Gurugram, India (remote)
+    overview: MBA admissions consultancy. YourScore by AG is its test-prep arm (GMAT, GRE, SAT, EA).
+  positions:
+  - designation: Chief Growth Officer, YourScore by AG
+    start: Sep 2026
+    responsibilities:
+    - Growing something I helped create into something generational. :)
+  - designation: Growth Consultant, YourScore by AG
+    start: Nov 2024
+    end: Sep 2026
+    responsibilities:
+    - Acting as a sounding board to the partners and being a general growth chaos agent. :)
+    - Supported the company in growing from 0 to ₹X.XX Cr in top-line revenue.
 
 - company:
     name: Arthur D. Little

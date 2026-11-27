@@ -45,6 +45,8 @@
         '<ellipse cx="38" cy="35" rx="22" ry="5" fill="' + SUN + '" stroke="' + INK + '" stroke-width="1.2"/>' +   // near wing
         '<line x1="30" y1="42" x2="28" y2="49" stroke="' + INK + '" stroke-width="2"/>' +       // wheel strut
         '<circle cx="28" cy="51" r="3.2" fill="' + INK + '"/>' +
+        '<line x1="70" y1="35" x2="72" y2="41" stroke="' + INK + '" stroke-width="1.6"/>' +       // tail wheel strut
+        '<circle cx="72" cy="42.5" r="2" fill="' + INK + '"/>' +                                    // tail wheel
         '<circle cx="10" cy="33" r="4.2" fill="' + SUN + '"/>' +                                    // nose cone
         '<rect class="golu-flyby__prop" x="5.5" y="20" width="3" height="28" rx="1.5" fill="' + INK + '" opacity=".75"/>' +
       '</g>' +
